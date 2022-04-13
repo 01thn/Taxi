@@ -23,7 +23,7 @@ public class RegisterUserServlet extends HttpServlet {
         boolean result = RegisterUserService.registerUser(login, password, name);
 
         if (result) {
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("/auth");
         } else {
             req.setAttribute("login", login);
             req.setAttribute("name", name);
