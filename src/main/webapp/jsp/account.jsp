@@ -3,10 +3,10 @@
 <head>
     <title>Account</title>
 </head>
+<body>
     <c:if test="${not empty message}">
         ${message}
     </c:if>
-<body>
     <form method="post" action="confirm-order">
         <label for="order-from">Input the place of start</label>
         <input type="text" id="order-from" name="order-from" placeholder="Minsk, Surhanava, 28">

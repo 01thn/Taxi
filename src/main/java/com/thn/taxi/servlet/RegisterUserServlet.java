@@ -13,12 +13,9 @@ import java.io.IOException;
 public class RegisterUserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String login;
-        String password;
-        String name;
-        login = req.getParameter("login");
-        password = req.getParameter("password");
-        name = req.getParameter("name");
+        String login = req.getParameter("login");
+        String password = req.getParameter("password");
+        String name = req.getParameter("name");
 
         boolean result = RegisterUserService.registerUser(login, password, name);
 
@@ -28,6 +25,7 @@ public class RegisterUserServlet extends HttpServlet {
             req.setAttribute("login", login);
             req.setAttribute("name", name);
             req.setAttribute("message", "Something went wrong. Try again");
+
             getServletContext().getRequestDispatcher("/sign-up").forward(req, resp);
         }
     }

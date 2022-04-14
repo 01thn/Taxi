@@ -24,6 +24,7 @@ public class ConfirmOrderServlet extends HttpServlet {
         } else {
             req.setAttribute("message", "Order was not sent. Try again");
         }
+
         getServletContext().getRequestDispatcher("/account").forward(req, resp);
     }
 }

@@ -26,10 +26,12 @@ public class CheckUserServlet extends HttpServlet {
             cookie.setMaxAge(60);
             resp.addCookie(cookie);
             req.getSession().setAttribute("login", login);
+
             resp.sendRedirect("account");
         } else {
             req.setAttribute("login", login);
             req.setAttribute("message", "Looks like you are not signed up");
+
             getServletContext().getRequestDispatcher("/auth").forward(req, resp);
         }
     }
